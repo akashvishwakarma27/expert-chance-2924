@@ -1,4 +1,4 @@
-package com.masai;
+package com.been;
 
 import java.sql.Date;
 import java.util.List;
@@ -11,7 +11,7 @@ public class Criminal {
     private String identifyingMark;
     private Date firstArrestDate;
     private String arrestedFromPsArea;
-    private List<Crime> crimes; // List of crimes the criminal is involved in
+    private List<Crime> crimes;
     
     
 	public Criminal(int criminalId, String name, Date dob, String gender, String identifyingMark, Date firstArrestDate,
@@ -26,15 +26,8 @@ public class Criminal {
 		this.arrestedFromPsArea = arrestedFromPsArea;
 		this.crimes = crimes;
 	}
-	
-	  public void addCrimeId(int crimeId) {
-	        this.crimeIds.add(crimeId);
-	    }
-	    
-	    public void removeCrimeId(int crimeId) {
-	        this.crimeIds.remove(Integer.valueOf(crimeId));
-	    }
-	
+
+
 	public int getCriminalId() {
 		return criminalId;
 	}
@@ -113,6 +106,20 @@ public class Criminal {
 	public void setCrimes(List<Crime> crimes) {
 		this.crimes = crimes;
 	}
- 
+
+
+	@Override
+	public String toString() {
+		return "Criminal [criminalId=" + criminalId + ", name=" + name + ", dob=" + dob + ", gender=" + gender
+				+ ", identifyingMark=" + identifyingMark + ", firstArrestDate=" + firstArrestDate
+				+ ", arrestedFromPsArea=" + arrestedFromPsArea + ", crimes=" + crimes + ", getCriminalId()="
+				+ getCriminalId() + ", getName()=" + getName() + ", getDob()=" + getDob() + ", getGender()="
+				+ getGender() + ", getIdentifyingMark()=" + getIdentifyingMark() + ", getFirstArrestDate()="
+				+ getFirstArrestDate() + ", getArrestedFromPsArea()=" + getArrestedFromPsArea() + ", getCrimes()="
+				+ getCrimes() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
     
+
+	
 }
