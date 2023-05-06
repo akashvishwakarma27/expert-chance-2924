@@ -4,37 +4,42 @@ import java.sql.Date;
 import java.util.List;
 
 public class Crime {
-    private int crimeId;
+    private int crime_id;
     private String type;
     private String description;
-    private String psArea;
+    private String ps_area;
     private Date date;
-    private String victimName;
+    private String victim;
     private List<Criminal> criminals;
     
     
-	public Crime(int crimeId, String type, String description, String psArea, Date date, String victimName,
+	public Crime(int crime_id, String type, String description, String ps_area, Date date, String victim,
 			List<Criminal> criminals) {
 		super();
-		this.crimeId = crimeId;
+		this.crime_id = crime_id;
 		this.type = type;
 		this.description = description;
-		this.psArea = psArea;
+		this.ps_area = ps_area;
 		this.date = date;
-		this.victimName = victimName;
+		this.victim = victim;
 		this.criminals = criminals;
-	} 
-    
-    
-    
-    
-	public int getCrimeId() {
-		return crimeId;
+	}
+
+    public void addCriminal(Criminal criminal) {
+        criminals.add(criminal);
+    }
+
+    public void removeCriminal(Criminal criminal) {
+        criminals.remove(criminal);
+    }
+	
+	public int getCrime_id() {
+		return crime_id;
 	}
 
 
-	public void setCrimeId(int crimeId) {
-		this.crimeId = crimeId;
+	public void setCrime_id(int crime_id) {
+		this.crime_id = crime_id;
 	}
 
 
@@ -58,13 +63,13 @@ public class Crime {
 	}
 
 
-	public String getPsArea() {
-		return psArea;
+	public String getPs_area() {
+		return ps_area;
 	}
 
 
-	public void setPsArea(String psArea) {
-		this.psArea = psArea;
+	public void setPs_area(String ps_area) {
+		this.ps_area = ps_area;
 	}
 
 
@@ -78,13 +83,13 @@ public class Crime {
 	}
 
 
-	public String getVictimName() {
-		return victimName;
+	public String getVictim() {
+		return victim;
 	}
 
 
-	public void setVictimName(String victimName) {
-		this.victimName = victimName;
+	public void setVictim(String victim) {
+		this.victim = victim;
 	}
 
 
@@ -98,18 +103,16 @@ public class Crime {
 	}
 
 
-
-
 	@Override
 	public String toString() {
-		return "Crime [crimeId=" + crimeId + ", type=" + type + ", description=" + description + ", psArea=" + psArea
-				+ ", date=" + date + ", victimName=" + victimName + ", criminals=" + criminals + ", getCrimeId()="
-				+ getCrimeId() + ", getType()=" + getType() + ", getDescription()=" + getDescription()
-				+ ", getPsArea()=" + getPsArea() + ", getDate()=" + getDate() + ", getVictimName()=" + getVictimName()
+		return "Crime [crime_id=" + crime_id + ", type=" + type + ", description=" + description + ", ps_area="
+				+ ps_area + ", date=" + date + ", victim=" + victim + ", criminals=" + criminals + ", getCrime_id()="
+				+ getCrime_id() + ", getType()=" + getType() + ", getDescription()=" + getDescription()
+				+ ", getPs_area()=" + getPs_area() + ", getDate()=" + getDate() + ", getVictim()=" + getVictim()
 				+ ", getCriminals()=" + getCriminals() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
-	}
-    
+	}  
+	
 	
 	
 }
