@@ -27,6 +27,7 @@ public class Criminal {
 		this.arrested_from_ps_area = arrested_from_ps_area;
 		this.crime_ids = crime_ids;
 	}
+
 	public int getCriminal_id() {
 		return criminal_id;
 	}
